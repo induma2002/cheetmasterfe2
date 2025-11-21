@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheetMaster Control Room</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="dashboard">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Live capture hub</p>
+          <h1>Operator Console</h1>
+          <p>Trigger remote captures, watch the most recent frame, and download archived photos without leaving this screen.</p>
+        </div>
+        <div class="actions">
+          <button id="captureBtn" type="button">Trigger Capture</button>
+          <span id="operatorStatus" class="badge badge--danger">Socket offline</span>
+        </div>
+      </header>
+
+      <section class="live-view">
+        <div class="panel">
+          <div class="panel-heading">
+            <h2>Latest Frame</h2>
+            <button id="refreshBtn" type="button" class="ghost">Refresh</button>
+          </div>
+          <div class="viewer" id="latestContainer">
+            <p id="emptyLatest">No images have been uploaded yet.</p>
+            <img id="latestImage" alt="Latest capture" />
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <div class="panel-heading">
+          <h2>Captured Gallery</h2>
+          <button id="reloadGallery" type="button" class="ghost">Reload</button>
+        </div>
+        <div id="galleryList" class="gallery-grid"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
